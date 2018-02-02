@@ -51,7 +51,5 @@ public enum Actor {
     public String toString() {
         return "Actor{" + "name=" + name + ", coordinates=" + coordinates + ", insanityLevel=" + insanityLevel + ", description=" + description + ", inventory=" + inventory + '}';
     }
-    
-    
-    
+       
 }
