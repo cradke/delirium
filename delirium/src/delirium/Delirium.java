@@ -5,6 +5,8 @@
  */
 package delirium;
 
+import byui.cit260.DeliriumProject.model.Player;
+
 /**
  *
  * @author carlr
@@ -15,7 +17,7 @@ public class Delirium {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Player playerOne = new Player();
     }
     
 }
