@@ -27,13 +27,17 @@ public class Game implements Serializable {
         this.player = player;
     }
     
-
     public long getGameTime() {
         return gameTime;
     }
 
     public void setGameTime(long gameTime) {
         this.gameTime = gameTime;
+    }
+    
+    @Override
+    public String toString() {
+        return "Game{" + "gameTime=" + gameTime + '}';
     }
 
     @Override
@@ -61,11 +65,4 @@ public class Game implements Serializable {
         return true;
     }
 
-    @Override
-    public String toString() {
-        return "Game{" + "gameTime=" + gameTime + '}';
-    }
-
-    
-    
 }
