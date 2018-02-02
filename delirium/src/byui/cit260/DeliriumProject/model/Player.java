@@ -28,7 +28,6 @@ public class Player implements Serializable {
         this.games = games;
     }
     
-
     public String getName() {
         return name;
     }
@@ -66,6 +65,5 @@ public class Player implements Serializable {
     public String toString() {
         return "Player{" + "name=" + name + '}';
     }
-    
-    
+
 }
