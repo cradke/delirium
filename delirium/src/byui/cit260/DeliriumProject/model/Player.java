@@ -6,6 +6,7 @@
 package byui.cit260.DeliriumProject.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Objects;
 
 /**
@@ -20,11 +21,11 @@ public class Player implements Serializable {
     public Player() {
     }
 
-    public <any> getGames() {
+    public ArrayList<Game> getGames() {
         return games;
     }
 
-    public void setGames(<any> games) {
+    public void setGames(ArrayList<Game> games) {
         this.games = games;
     }
     
