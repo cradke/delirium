@@ -5,11 +5,12 @@
  */
 package delirium;
 
+import byui.cit260.DeliriumProject.model.Actor;
 import byui.cit260.DeliriumProject.model.Player;
 
 /**
  *
- * @author carlr
+ * @author Carl, Christian, and their Homeboy Josh
  */
 public class Delirium {
 
@@ -18,6 +19,19 @@ public class Delirium {
      */
     public static void main(String[] args) {
         Player playerOne = new Player();
+        
+        playerOne.setName("Bob");
+        
+        String playerOneName = playerOne.getName();
+        
+        System.out.println("Name = " + playerOneName);
+        
+        Actor.Prisoner.getName();     
+        Actor.Prisoner.getDescription();
+        
+        System.out.println(Actor.Prisoner.getName() +     
+        Actor.Prisoner.getDescription());
+        
     }
     
 }
