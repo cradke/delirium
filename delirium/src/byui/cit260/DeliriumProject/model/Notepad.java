@@ -12,15 +12,15 @@ import java.util.Objects;
  *
  * @author Joshua Brown
  */
-public class ListOfSanity implements Serializable {
+public class Notepad implements Serializable {
     
     private long timeStamp;
-    private String actionName;
-    private String description;
+    private String note;
+    private double noteId;
 
-    public ListOfSanity() {
+    public Notepad() {
     }
-    
+
     public long getTimeStamp() {
         return timeStamp;
     }
@@ -29,28 +29,28 @@ public class ListOfSanity implements Serializable {
         this.timeStamp = timeStamp;
     }
 
-    public String getActionName() {
-        return actionName;
+    public String getNote() {
+        return note;
     }
 
-    public void setActionName(String actionName) {
-        this.actionName = actionName;
+    public void setNote(String note) {
+        this.note = note;
     }
 
-    public String getDescription() {
-        return description;
+    public double getNoteId() {
+        return noteId;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setNoteId(double noteId) {
+        this.noteId = noteId;
     }
 
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 17 * hash + (int) (this.timeStamp ^ (this.timeStamp >>> 32));
-        hash = 17 * hash + Objects.hashCode(this.actionName);
-        hash = 17 * hash + Objects.hashCode(this.description);
+        hash = 29 * hash + (int) (this.timeStamp ^ (this.timeStamp >>> 32));
+        hash = 29 * hash + Objects.hashCode(this.note);
+        hash = 29 * hash + (int) (Double.doubleToLongBits(this.noteId) ^ (Double.doubleToLongBits(this.noteId) >>> 32));
         return hash;
     }
 
@@ -65,14 +65,14 @@ public class ListOfSanity implements Serializable {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final ListOfSanity other = (ListOfSanity) obj;
+        final Notepad other = (Notepad) obj;
         if (this.timeStamp != other.timeStamp) {
             return false;
         }
-        if (!Objects.equals(this.actionName, other.actionName)) {
+        if (Double.doubleToLongBits(this.noteId) != Double.doubleToLongBits(other.noteId)) {
             return false;
         }
-        if (!Objects.equals(this.description, other.description)) {
+        if (!Objects.equals(this.note, other.note)) {
             return false;
         }
         return true;
@@ -80,7 +80,7 @@ public class ListOfSanity implements Serializable {
 
     @Override
     public String toString() {
-        return "ListOfSanity{" + "timeStamp=" + timeStamp + ", actionName=" + actionName + ", description=" + description + '}';
+        return "Notepad{" + "timeStamp=" + timeStamp + ", note=" + note + ", noteId=" + noteId + '}';
     }
     
     
