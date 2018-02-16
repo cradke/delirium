@@ -10,11 +10,11 @@ import byui.cit260.DeliriumProject.model.Player;
 
 /**
  *
- * @author Carl, Christian, and their Homeboy Josh
+ * @author carlr
  */
 public class Delirium {
 
-    /**
+       /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
@@ -32,6 +32,5 @@ public class Delirium {
         System.out.println(Actor.Prisoner.getName() +     
         Actor.Prisoner.getDescription());
         
-    }
-    
+    } 
 }
