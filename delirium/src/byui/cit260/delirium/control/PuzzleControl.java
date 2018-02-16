@@ -35,8 +35,6 @@ public class PuzzleControl {
                 return 0;
             } else {
 
-                // Invalid inputs aren't checked for because they're equally punishable to
-                // incorrect inputs
                 if (boxA + boxB + boxC == 15
                         && boxD + boxE + boxF == 15
                         && boxG + boxH + boxI == 15
