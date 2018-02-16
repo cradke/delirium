@@ -15,6 +15,7 @@ public class PuzzleControl {
 
     public static void solvePuzzleVoodooBox(int boxB, int boxC, int boxD, int boxF, int boxG, int boxH, Actor actor) {
 
+        boolean door = false;
         int boxA = 2;
         int boxE = 5;
         int boxI = 8;
@@ -29,6 +30,7 @@ public class PuzzleControl {
                 && boxG + boxE + boxC == 15) {
 
             System.out.println("The voodoo box is correct and has been solved. The door unlocks and you can proceed");
+            door = true;
         } else {
             System.out.println("That is incorrect. Try again. You feel a strange feeling in your head.");
             int insane = actor.getInsanityLevel();
