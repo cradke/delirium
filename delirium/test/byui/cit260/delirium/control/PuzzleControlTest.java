@@ -35,7 +35,32 @@ public class PuzzleControlTest {
         int result = PuzzleControl.solvePuzzleVoodooBox(boxB, boxC, boxD, boxF, boxG, boxH, Actor.Prisoner);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-      
-    }
     
+        
+    // Test case 2
+       System.out.println("solvePuzzleVoodooBox");
+        boxB = 9;
+        boxC = 6;
+        boxD = 7;
+        boxF = 1;
+        boxG = 3;
+        boxH = 4;
+        
+        expResult = 0;
+        result = PuzzleControl.solvePuzzleVoodooBox(boxB, boxC, boxD, boxF, boxG, boxH, Actor.Prisoner);
+        assertEquals(expResult, result);
+        
+        // Test case 3
+        System.out.println("solvePuzzleVoodooBox");
+        boxB = -5;
+        boxC = 6;
+        boxD = 9;
+        boxF = 1;
+        boxG = 4;
+        boxH = 3;
+        
+        expResult = 0;
+        result = PuzzleControl.solvePuzzleVoodooBox(boxB, boxC, boxD, boxF, boxG, boxH, Actor.Prisoner);
+        assertEquals(expResult, result);
+    }
 }
