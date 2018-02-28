@@ -5,6 +5,7 @@
  */
 package byui.cit260.delirium.view;
 
+import byui.cit260.delirium.control.GameControl;
 import java.util.Scanner;
 
 /**
@@ -15,29 +16,7 @@ public class StartProgramView {
     
     public StartProgramView() {
     
-        //getInputs(): String[] {
         
-            //inputs = new String array one element long
-            
-            //Display the welcome banner
-            
-            //valid = false
-            //WHILE valid == false (while input value is not valid)
-                
-                //Display the prompy message, "Enter the player's name"
-                //Get the value entered from the keyboard
-                //Trim off leading and trailing blanks from the value
-                
-                //IF length of the value < 2 then
-                  //Display "you must enter a value."
-                  //Continue (move to the top of the loop and repeat)
-                //ENDIF
-                
-                //Assign the value to the first position in the inputs array 
-                //valid = true
-            //ENDWHILE
-            
-            //RETURN inputs
     }
     
     
@@ -53,23 +32,64 @@ public class StartProgramView {
         } while (endView != true);
     }
 
-    private String[] getInputs() {
+    private String [] getInputs(): {
         
-        //Creates an input file
-        Scanner inFile;
-        inFile = new Scanner(System.in);
-        
-        //Reads the vaue of the next line typed in the console
-        String name = inFile.nextLine();
-        
-        //Trim the string
-       
+        //Create scanner file and input for that file, then trim the string
+            Scanner inFile;
+            inFile = new Scanner(System.in);
+           //inputs = new String array one element long;
+            String a[] = new String[1];
+            //Display the welcome banner
+            System.out.println("**************************************** "
+                             + "* Insert Incredibly Awesome Banner Here *"
+                             + "*****************************************");
+            
+            boolean valid = false;
+           
+            while (valid == false) {
+                //Display the prompy message, "Enter the player's name"
+                System.out.println("Enter the player's name");
+                //Get the value entered from the keyboard
+                 String input = inFile.nextLine();
+                 String name = input.trim();
+                
+                //IF length of the value < 2 then
+                if (name.length() < 2) {
+                  System.out.println("This is not a valid input");
+                  valid = false;
+                }
+                else {
+                    name = a[0];
+                    valid = true;
+                }
+                
+            }
+            
+            return a;
+
     }
 
     private boolean doAction(String[] inputs) {
-        System.out.println("**** doAction() called ***");
-        System.out.println("\tinputs = " + inputs[0]);
+        //playersName = get the first value in the inputs array
+        String playesrsName = a[0];
+        //player = savePlayer(playersName)
+        Player player = GameControl.savePlayer(playersName);
+        //IF player == null
+        if (player == null) {
+            System.out.println("Could not create the player." +
+                                "Enter a different name.");
+        //RETURN false // Repeats the StartProgramView
+            return false;
+        }
         
-        return true;
+        else{
+          System.out.println("****************************************" +
+                             " Welcom to the game" + playersName +
+                             " We hope you pee your pants" +
+                             "****************************************");
+        }
+
+        //mainMenuView = Create a new MainMenuView object
+        mainMenuView = mainMenuView.displayMainMenuView();
     }
 } 
