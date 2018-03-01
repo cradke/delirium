@@ -37,9 +37,7 @@ public class StartProgramView {
         //Create scanner file and input for that file, then trim the string
             Scanner inFile;
             inFile = new Scanner(System.in);
-           //inputs = new String array one element long;
             String a[] = new String[1];
-            //Display the welcome banner
             System.out.println("**************************************** "
                              + "* Insert Incredibly Awesome Banner Here *"
                              + "*****************************************");
@@ -57,6 +55,7 @@ public class StartProgramView {
                 if (name.length() < 2) {
                   System.out.println("This is not a valid input");
                   valid = false;
+                  continue;
                 }
                 else {
                     name = a[0];
