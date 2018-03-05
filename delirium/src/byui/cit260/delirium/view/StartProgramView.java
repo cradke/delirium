@@ -5,7 +5,9 @@
  */
 package byui.cit260.delirium.view;
 
+import byui.cit260.DeliriumProject.model.Player;
 import byui.cit260.delirium.control.GameControl;
+
 import java.util.Scanner;
 
 /**
@@ -25,19 +27,18 @@ public class StartProgramView {
        boolean endView = false;
         do {
            String[] inputs = this.getInputs();
-            if (inputs == null){
+            if (inputs[0].toUpperCase().equals("Q")){
                 return;
             }
             endView = doAction(inputs);
         } while (endView != true);
     }
 
-    private String [] getInputs(): {
+    private String[] getInputs() {
         
-        //Create scanner file and input for that file, then trim the string
             Scanner inFile;
             inFile = new Scanner(System.in);
-            String a[] = new String[1];
+            String[] inputs = new String[1];
             System.out.println("**************************************** "
                              + "* Insert Incredibly Awesome Banner Here *"
                              + "*****************************************");
@@ -45,32 +46,28 @@ public class StartProgramView {
             boolean valid = false;
            
             while (valid == false) {
-                //Display the prompy message, "Enter the player's name"
                 System.out.println("Enter the player's name");
-                //Get the value entered from the keyboard
                  String input = inFile.nextLine();
                  String name = input.trim();
                 
-                //IF length of the value < 2 then
                 if (name.length() < 2) {
                   System.out.println("This is not a valid input");
                   valid = false;
-                  continue;
                 }
                 else {
-                    name = a[0];
+                   inputs[0] = name;
                     valid = true;
                 }
                 
             }
             
-            return a;
+            return inputs;
 
     }
 
     private boolean doAction(String[] inputs) {
         //playersName = get the first value in the inputs array
-        String playesrsName = a[0];
+        String playersName = inputs[0];
         //player = savePlayer(playersName)
         Player player = GameControl.savePlayer(playersName);
         //IF player == null
@@ -83,12 +80,14 @@ public class StartProgramView {
         
         else{
           System.out.println("****************************************" +
-                             " Welcom to the game" + playersName +
-                             " We hope you pee your pants" +
+                             " Hi I'm Elmo. " + playersName +
+                             " is my best friend." +
                              "****************************************");
         }
 
         //mainMenuView = Create a new MainMenuView object
-        mainMenuView = mainMenuView.displayMainMenuView();
+        MainMenuView mainMenuView = new MainMenuView();
+        mainMenuView.displayMainMenuView();
+        return true;
     }
 } 
