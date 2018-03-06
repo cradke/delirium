@@ -9,14 +9,12 @@ package byui.cit260.delirium.view;
  *
  * @author Joshua Brown
  */
-public class String {
-    String playerName = new String();
+public class MainMenuView {
 
-    public String getPlayerName() {
-        return playerName;
+    public MainMenuView() {
     }
-
-    public void setPlayerName(String playerName) {
-        this.playerName = playerName;
+    
+    public void displayMainMenuView(){
+        System.out.println("*** displayMainMenuView() called");
     }
 }

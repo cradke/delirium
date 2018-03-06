@@ -5,8 +5,10 @@
  */
 package delirium;
 
-import byui.cit260.DeliriumProject.model.Actor;
+
+import byui.cit260.DeliriumProject.model.Game;
 import byui.cit260.DeliriumProject.model.Player;
+import byui.cit260.delirium.view.StartProgramView;
 
 /**
  *
@@ -14,23 +16,29 @@ import byui.cit260.DeliriumProject.model.Player;
  */
 public class Delirium {
 
-       /**
-     * @param args the command line arguments
-     */
+       private static Game currentGame = null;
+       private static Player player = null;
+       
     public static void main(String[] args) {
-        Player playerOne = new Player();
         
-        playerOne.setName("Bob");
-        
-        String playerOneName = playerOne.getName();
-        
-        System.out.println("Name = " + playerOneName);
-        
-        Actor.Prisoner.getName();     
-        Actor.Prisoner.getDescription();
-        
-        System.out.println(Actor.Prisoner.getName() +     
-        Actor.Prisoner.getDescription());
+        StartProgramView startProgramView = new StartProgramView();
+        startProgramView.displayStartProgramView();
         
     } 
+    
+    public static Game getCurrentGame() {
+        return currentGame;
+    }
+    
+    public static void setCurrentGame(Game currentGame) {
+        Delirium.currentGame = currentGame;
+    }
+    
+    public static Player getPlayer() {
+        return player;
+    }
+    
+    public static void setPlayer(Player player) {
+        Delirium.player = player;
+    }
 }
