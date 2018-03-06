@@ -15,6 +15,42 @@ public class MainMenuView {
     }
     
     public void displayMainMenuView(){
-        System.out.println("*** displayMainMenuView() called");
-    }
+        
+       boolean endView = false;
+        do {
+           String[] inputs = this.getInputs();
+            if (inputs[0].toUpperCase().equals("Q")){
+                return;
+            }
+            endView = doAction(inputs);
+        } while (endView != true);
+        }
+
+    private String[] getInputs() {
+        return null;
+        
+  //       inputs = new String array whose length = no. of inputs
+ //Display the instructions
+
+//valid = false
+//WHILE valid == false (while input value is not valid)
+
+//Display the prompt message
+//Get the value entered from the keyboard
+//Trim off leading and trailing blanks from the value
+//IF length of the value < 1 then
+//Display "You must enter a value.”
+//Continue
+//ENDIF
+//Assign value to the next position in the inputs array
+//valid = true
+//ENDWHILE
+
+//RETURN inputs 
 }
+
+    private boolean doAction(String[] inputs) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }   
+}
+
