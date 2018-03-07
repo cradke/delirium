@@ -15,19 +15,16 @@ import java.util.Scanner;
  * @author Joshua Brown
  */
 public class StartProgramView {
-    
+
     public StartProgramView() {
-    
-        
+
     }
-    
-    
-            
+
     public void displayStartProgramView() {
-       boolean endView = false;
+        boolean endView = false;
         do {
-           String[] inputs = this.getInputs();
-            if (inputs[0].toUpperCase().equals("Q")){
+            String[] inputs = this.getInputs();
+            if (inputs[0].toUpperCase().equals("Q")) {
                 return;
             }
             endView = doAction(inputs);
@@ -35,33 +32,32 @@ public class StartProgramView {
     }
 
     private String[] getInputs() {
-        
-            Scanner inFile;
-            inFile = new Scanner(System.in);
-            String[] inputs = new String[1];
-            System.out.println("**************************************** "
-                             + "* Insert Incredibly Awesome Banner Here *"
-                             + "*****************************************");
-            
-            boolean valid = false;
-           
-            while (valid == false) {
-                System.out.println("Enter the player's name");
-                 String input = inFile.nextLine();
-                 String name = input.trim();
-                
-                if (name.length() < 2) {
-                  System.out.println("This is not a valid input");
-                  valid = false;
-                }
-                else {
-                   inputs[0] = name;
-                    valid = true;
-                }
-                
+
+        Scanner inFile;
+        inFile = new Scanner(System.in);
+        String[] inputs = new String[1];
+        System.out.println("**************************************** "
+                + "* Insert Incredibly Awesome Banner Here *"
+                + "*****************************************");
+
+        boolean valid = false;
+
+        while (valid == false) {
+            System.out.println("Enter the player's name");
+            String input = inFile.nextLine();
+            String name = input.trim();
+
+            if (name.length() < 2) {
+                System.out.println("This is not a valid input");
+                valid = false;
+            } else {
+                inputs[0] = name;
+                valid = true;
             }
-            
-            return inputs;
+
+        }
+
+        return inputs;
 
     }
 
@@ -72,17 +68,15 @@ public class StartProgramView {
         Player player = GameControl.savePlayer(playersName);
         //IF player == null
         if (player == null) {
-            System.out.println("Could not create the player." +
-                                "Enter a different name.");
-        //RETURN false // Repeats the StartProgramView
+            System.out.println("Could not create the player."
+                    + "Enter a different name.");
+            //RETURN false // Repeats the StartProgramView
             return false;
-        }
-        
-        else{
-          System.out.println("****************************************" +
-                             " Hi I'm Elmo. " + playersName +
-                             " is my best friend." +
-                             "****************************************");
+        } else {
+            System.out.println("****************************************"
+                    + " Hi I'm Elmo. " + playersName
+                    + " is my best friend."
+                    + "****************************************");
         }
 
         //mainMenuView = Create a new MainMenuView object
@@ -90,4 +84,4 @@ public class StartProgramView {
         mainMenuView.displayMainMenuView();
         return true;
     }
-} 
+}

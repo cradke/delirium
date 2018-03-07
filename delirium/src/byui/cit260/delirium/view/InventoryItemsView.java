@@ -5,13 +5,18 @@
  */
 package byui.cit260.delirium.view;
 
+import java.util.Scanner;
 
-import byui.cit260.DeliriumProject.model.Player;
-import byui.cit260.delirium.control.GameControl;
 /**
  *
  * @author Christian
  */
 public class InventoryItemsView {
+
+    public InventoryItemsView() {
+
+    }
+
+   
     
 }
