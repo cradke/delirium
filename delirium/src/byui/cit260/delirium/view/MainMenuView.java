@@ -26,10 +26,12 @@ public class MainMenuView {
            String[] inputs = this.getInputs();
             if (inputs[0].toUpperCase().equals("Q")){
                 return;
-            }
+            } else if (inputs[0].toUpperCase().equals("N")) {
+                return;
+        }
             endView = doAction(inputs);
         } while (endView != true);
-        }
+    }
 
     private String[] getInputs() {
         
@@ -41,7 +43,7 @@ public class MainMenuView {
         this.promptMessage = "Enter in a command! ('N', 'L' or 'Q')";
         inputs[0] = this.getInput();
         if (inputs[0].toUpperCase().equals("Q")) {
-            return inputs;
+            
         }
         
         // The 'l' key boi
@@ -49,7 +51,7 @@ public class MainMenuView {
         this.promptMessage = "Enter in a command! ('N', 'L' or 'Q')";
         inputs[1] = this.getInput();
         if (inputs[1].toUpperCase().equals("L")) {
-            return inputs;
+            
         }
         
         // The 'n' key boi
@@ -57,7 +59,7 @@ public class MainMenuView {
         this.promptMessage = "Enter in a command! ('N', 'L' or 'Q')";
         inputs[2] = this.getInput();
         if (inputs[2].toUpperCase().equals("N")) {
-            return inputs;
+            
         }
         
         return inputs;
@@ -87,7 +89,12 @@ public class MainMenuView {
     }
     
     private boolean doAction(String[] inputs) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }   
+        if (inputs[0].equals("N")){
+            System.out.println("inputs = N");
+            } else {
+            System.out.println("Unknown Input");
+            }
+        return false;
+    }
 }
 
