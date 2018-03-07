@@ -5,6 +5,9 @@
  */
 package byui.cit260.delirium.view;
 
+import byui.cit260.delirium.control.ProgramControl;
+import delirium.Delirium;
+
 import java.util.*;
 
 /**
@@ -18,83 +21,78 @@ public class MainMenuView {
 
     public MainMenuView() {
     }
-    
-    public void displayMainMenuView(){
-        
-       boolean endView = false;
+
+    public void displayMainMenuView() {
+
+        boolean endView = false;
         do {
-           String[] inputs = this.getInputs();
-            if (inputs[0].toUpperCase().equals("Q")){
+            String[] inputs = this.getInputs();
+            if (inputs[0].toUpperCase().equals("Q")) {
                 return;
-            } else if (inputs[0].toUpperCase().equals("N")) {
-                return;
-        }
+            }
             endView = doAction(inputs);
         } while (endView != true);
     }
 
     private String[] getInputs() {
-        
-        String[] inputs = new String[3];
+
+        String[] inputs = new String[1];
         System.out.println("DELIRIUM - Main Menu ");
-        
+
         // The 'q' key boi
         this.description = "Press 'Q' to quit the view Press 'N' for new game Press 'L' to load a saved game";
         this.promptMessage = "Enter in a command! ('N', 'L' or 'Q')";
         inputs[0] = this.getInput();
         if (inputs[0].toUpperCase().equals("Q")) {
-            
+            return inputs;
         }
-        
-        // The 'l' key boi
-        this.description = "Press 'Q' to quit the view Press 'N' for new game Press 'L' to load a saved game";
-        this.promptMessage = "Enter in a command! ('N', 'L' or 'Q')";
-        inputs[1] = this.getInput();
-        if (inputs[1].toUpperCase().equals("L")) {
-            
-        }
-        
-        // The 'n' key boi
-        this.description = "Press 'Q' to quit the view Press 'N' for new game Press 'L' to load a saved game";
-        this.promptMessage = "Enter in a command! ('N', 'L' or 'Q')";
-        inputs[2] = this.getInput();
-        if (inputs[2].toUpperCase().equals("N")) {
-            
-        }
-        
+
+       
+
         return inputs;
-}
+    }
 
     private String getInput() {
         Scanner inFile;
         inFile = new Scanner(System.in);
         boolean valid = false;
         String input = null;
-        
+
         while (valid == false) {
             System.out.println(this.description);
             System.out.println(this.promptMessage);
             input = inFile.nextLine();
             input = input.trim();
-            
+
             if (input.length() < 1) {
                 System.out.println("Please enter in a correct value");
                 valid = false;
             } else {
-                valid = true; 
+                valid = true;
             }
-            
+
         }
         return input;
     }
-    
+
     private boolean doAction(String[] inputs) {
-        if (inputs[0].equals("N")){
-            System.out.println("inputs = N");
-            } else {
-            System.out.println("Unknown Input");
-            }
+        switch (inputs[0].toUpperCase()) {
+            case "N":
+                ProgramControl.createNewGame(Delirium.getPlayer());
+                GameMenuView gameMenu = new GameMenuView();
+                gameMenu.displayGameMenuView();
+                break;
+            case "L":
+                
+                LoadGameView loadGameView = new LoadGameView();
+                loadGameView.displayLoadGameView();
+                break;
+            case "Q":
+                return true;
+                
+            default:
+                System.out.println("Error invalid option!");
+        }
         return false;
     }
 }
-
