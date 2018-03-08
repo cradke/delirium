@@ -11,7 +11,7 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author carlr
+ * author carlr & Christian
  */
 public class PuzzleControlTest {
     
