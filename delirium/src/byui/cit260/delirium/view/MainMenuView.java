@@ -48,11 +48,12 @@ public class MainMenuView {
         inFile = new Scanner(System.in);
         boolean valid = false;
         String input = null;
+        System.out.println(this.main);
+        System.out.println(this.description);
+        System.out.println(this.promptMessage);
 
         while (valid == false) {
-            System.out.println(this.main);
-            System.out.println(this.description);
-            System.out.println(this.promptMessage);
+            
             input = inFile.nextLine();
             input = input.trim();
 
@@ -73,15 +74,15 @@ public class MainMenuView {
                 ProgramControl.createNewGame(Delirium.getPlayer());
                 GameMenuView gameMenu = new GameMenuView();
                 gameMenu.displayGameMenuView();
-                break;
+                return true;
             case "L":
                 LoadGameView loadGameView = new LoadGameView();
                 loadGameView.displayLoadGameView();
-                break;
+                return true;
             case "H":
                 HelpView helpView = new HelpView();
                 helpView.displayHelpView();
-                break;
+                return true;
             case "Q":
                 return true;
                 
