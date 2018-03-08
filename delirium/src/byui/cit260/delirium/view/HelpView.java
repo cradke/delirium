@@ -66,6 +66,9 @@ public class HelpView {
     }
 
     private boolean doAction(String[] inputs) {
+        
+        
+        
         switch (inputs[0].toUpperCase()) {
             
             case "Q":

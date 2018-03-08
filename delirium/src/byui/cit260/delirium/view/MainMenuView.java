@@ -8,7 +8,7 @@ package byui.cit260.delirium.view;
 import byui.cit260.delirium.control.ProgramControl;
 import delirium.Delirium;
 
-import java.util.*;
+import java.util.Scanner;
 
 /**
  *
@@ -53,17 +53,14 @@ public class MainMenuView {
         System.out.println(this.promptMessage);
 
         while (valid == false) {
-            
             input = inFile.nextLine();
             input = input.trim();
-
             if (input.length() < 1) {
                 System.out.println("Please enter in a correct value");
                 valid = false;
             } else {
                 valid = true;
             }
-
         }
         return input;
     }
