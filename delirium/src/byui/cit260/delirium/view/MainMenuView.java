@@ -15,7 +15,7 @@ import java.util.*;
  * @author Joshua Brown
  */
 public class MainMenuView {
-
+    private String main;
     private String description;
     private String promptMessage;
 
@@ -35,20 +35,11 @@ public class MainMenuView {
     }
 
     private String[] getInputs() {
-
         String[] inputs = new String[1];
-        System.out.println("DELIRIUM - Main Menu ");
-
-        // The 'q' key boi
-        this.description = "Press 'Q' to quit the view Press 'N' for new game Press 'L' to load a saved game";
-        this.promptMessage = "Enter in a command! ('N', 'L' or 'Q')";
+        this.main = "DELIRIUM - Main Menu";
+        this.description = "Press 'N' to start a new game | Press 'L' to load a saved game | Press 'H' to get help | Press 'Q' to quit the game";
+        this.promptMessage = "Enter in a command! ('N', 'L', 'H' or 'Q')";
         inputs[0] = this.getInput();
-        if (inputs[0].toUpperCase().equals("Q")) {
-            return inputs;
-        }
-
-       
-
         return inputs;
     }
 
@@ -83,9 +74,12 @@ public class MainMenuView {
                 gameMenu.displayGameMenuView();
                 break;
             case "L":
-                
                 LoadGameView loadGameView = new LoadGameView();
                 loadGameView.displayLoadGameView();
+                break;
+            case "H":
+                HelpView helpView = new HelpView();
+                helpView.displayHelpView();
                 break;
             case "Q":
                 return true;
