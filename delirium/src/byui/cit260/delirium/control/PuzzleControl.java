@@ -12,6 +12,33 @@ import byui.cit260.DeliriumProject.model.Actor;
  * @author carlr
  */
 public class PuzzleControl {
+    
+    public static int solvePythagoreanPuzzle(double height, double length, Actor actor) {
+        int hypotenuse = 13;
+        int insane;
+        
+        if (actor == null) {
+            return -1;
+        } else {
+            if (height < 10 || height > 10 || length < 8 || length > 8) {
+                insane = actor.getInsanityLevel();
+                insane += 10;
+                actor.setInsanityLevel(insane);
+                return 0;
+            } else {
+                if (height * height + length * length == 164) {
+                    
+                    return 1;
+                } else {
+                    insane = actor.getInsanityLevel();
+                    insane += 10;
+                    actor.setInsanityLevel(insane);
+                    return 0;
+                }
+            }
+        }
+        
+    }
 
     public static int solvePuzzleVoodooBox(int boxB, int boxC, int boxD,
             int boxF, int boxG, int boxH, Actor actor) {
