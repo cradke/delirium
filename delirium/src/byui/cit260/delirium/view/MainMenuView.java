@@ -50,6 +50,7 @@ public class MainMenuView {
         String input = null;
 
         while (valid == false) {
+            System.out.println(this.main);
             System.out.println(this.description);
             System.out.println(this.promptMessage);
             input = inFile.nextLine();
