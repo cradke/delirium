@@ -60,6 +60,7 @@ public class GameMenuView {
     private String getInput() {
         System.out.println(this.message);
         System.out.println("Press a b c d e f or g for whatever command they are given");
+        System.out.println("Press i to open the inventory");
         System.out.println("Press h to get help");
         System.out.println("Press q to quit back to the main menu and save the game");
         while (valid == false) {
@@ -77,13 +78,16 @@ public class GameMenuView {
 
     private boolean doAction(String[] inputs) {
         switch (inputs[0].toUpperCase()) {
-            case "":
-                
+            case "I":
+                InventoryItemsView inventoryItemsView = new InventoryItemsView();
+                inventoryItemsView.displayInventoryItemsView();
+                return true;
                 
             case "H":
                 HelpView helpView = new HelpView();
                 helpView.displayHelpView();
                 return true;
+                
             case "Q":
                 System.out.println("Are you sure you want to Save and Quit to the main menu? Press y for yes or n for no");
                 input2 = inFile.nextLine();
