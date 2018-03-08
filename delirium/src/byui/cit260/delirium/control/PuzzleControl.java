@@ -9,7 +9,7 @@ import byui.cit260.DeliriumProject.model.Actor;
 
 /**
  *
- * @author carlr
+ * author carlr & Christian
  */
 public class PuzzleControl {
     
