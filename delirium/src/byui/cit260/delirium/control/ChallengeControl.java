@@ -11,6 +11,20 @@ package byui.cit260.delirium.control;
  */
 public class ChallengeControl {
     
+    public static double calcVolumeOfHole(double depth, double radius) {
+        
+        // Check for invalid inputs
+        if(depth < 0 || depth > 15){
+            return -1;
+        }
+        if(radius < 0 || radius > 10){
+            return -1;
+        }
+        // Algorithm to determine volume
+        double volume = (Math.PI * Math.pow(radius, 2) * depth);
+        return Math.round(volume);
     
-    
+    }
 }
+    
+
