@@ -11,7 +11,7 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author carlr
+ * author carlr & Christian
  */
 public class PuzzleControlTest {
     
@@ -62,5 +62,46 @@ public class PuzzleControlTest {
         expResult = 0;
         result = PuzzleControl.solvePuzzleVoodooBox(boxB, boxC, boxD, boxF, boxG, boxH, Actor.Prisoner);
         assertEquals(expResult, result);
+    }
+    
+    
+
+    /**
+     * Test of solvePythagoreanTheorem method, of class PuzzleControl.
+     */
+    @Test
+    public void testSolvePythagoreanTheorem() {
+        // Test 1
+        System.out.println("solvePythagoreanTheorem");
+        double height = 10;
+        double length = 8;
+        
+        
+        int expResult = 1;
+        int result = PuzzleControl.solvePythagoreanPuzzle(height, length, Actor.Prisoner);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        
+        // Test 2
+        System.out.println("solvePythagoreanTheorem");
+        height = 11;
+        length = 9;
+        
+        
+        expResult = 0;
+        result = PuzzleControl.solvePythagoreanPuzzle(height, length, Actor.Prisoner);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
+        
+        // Test 3
+        System.out.println("solvePythagoreanTheorem");
+        height = 9;
+        length = 7;
+        
+        
+        expResult = 0;
+        result = PuzzleControl.solvePythagoreanPuzzle(height, length, Actor.Prisoner);
+        assertEquals(expResult, result);
+        // TODO review the generated test code and remove the default call to fail.
     }
 }
