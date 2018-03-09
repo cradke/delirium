@@ -17,6 +17,10 @@ public class InventoryItemsView {
 
     }
 
+    void displayInventoryItemsView() {
+         System.out.println("*** Inventory Items View called ***");
+    }
+
    
     
 }

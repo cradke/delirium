@@ -8,7 +8,7 @@ package byui.cit260.delirium.view;
 import byui.cit260.delirium.control.ProgramControl;
 import delirium.Delirium;
 
-import java.util.*;
+import java.util.Scanner;
 
 /**
  *
@@ -48,21 +48,19 @@ public class MainMenuView {
         inFile = new Scanner(System.in);
         boolean valid = false;
         String input = null;
+        System.out.println(this.main);
+        System.out.println(this.description);
+        System.out.println(this.promptMessage);
 
         while (valid == false) {
-            System.out.println(this.main);
-            System.out.println(this.description);
-            System.out.println(this.promptMessage);
             input = inFile.nextLine();
             input = input.trim();
-
             if (input.length() < 1) {
                 System.out.println("Please enter in a correct value");
                 valid = false;
             } else {
                 valid = true;
             }
-
         }
         return input;
     }
@@ -73,15 +71,15 @@ public class MainMenuView {
                 ProgramControl.createNewGame(Delirium.getPlayer());
                 GameMenuView gameMenu = new GameMenuView();
                 gameMenu.displayGameMenuView();
-                break;
+                return true;
             case "L":
                 LoadGameView loadGameView = new LoadGameView();
                 loadGameView.displayLoadGameView();
-                break;
+                return true;
             case "H":
                 HelpView helpView = new HelpView();
                 helpView.displayHelpView();
-                break;
+                return true;
             case "Q":
                 return true;
                 
