@@ -9,6 +9,10 @@ package byui.cit260.delirium.view;
  *
  * @author Joshua Brown
  */
-public class ViewInterface {
+public interface ViewInterface {
     
+    public void display();
+    public String[] getInputs();
+    public String getInput(String promptMessage);
+    public boolean doAction(String[] inputs);
 }
