@@ -81,4 +81,37 @@ public class PuzzleControl {
 
         }
     }
+    
+    
+    public static int solveForceMassPuzzle(double mass, double force, Actor actor) {
+        
+        //Constant variables
+        double acceleration;
+        int insane;
+        
+        // if actor is null then return error
+        if (actor == null) {
+            return -1;
+        } else {
+            //Check for negatives
+            if (force < 0 || mass < 0) {
+                insane = actor.getInsanityLevel();
+                insane += 10;
+                actor.setInsanityLevel(insane);
+                return 0;
+            } else {
+                //Divide the force by the mass to try to find the required acceleration
+                acceleration = force / mass;
+                }
+            
+            if (acceleration >= 30) {
+                    return 1;
+            } else {
+                insane = actor.getInsanityLevel();
+                insane += 10;
+                actor.setInsanityLevel(insane);
+                return 0;
+            }
+        }
+    }
 }
