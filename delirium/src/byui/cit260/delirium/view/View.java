@@ -12,22 +12,26 @@ import java.util.Scanner;
  * @author carlr
  */
 public abstract class View implements ViewInterface {
-     Scanner inFile = new Scanner(System.in);
-    
-    public void View() {
-        
+
+    Scanner inFile = new Scanner(System.in);
+
+    public View() {
+    }
+
+    @Override
+    public void display() {
         boolean endView = false;
         do {
             String[] inputs = this.getInputs();
             endView = doAction(inputs);
         } while (endView != true);
-}
+    }
 
-    private String[] getInputs() {
+    @Override
+    public String getInput(String promptMessage) {
         String[] inputs = new String[1];
-        
+        System.out.println(promptMessage);
         inputs[0] = this.getInput();
         return inputs;
     }
-
 }
