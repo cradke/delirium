@@ -8,7 +8,6 @@ package byui.cit260.delirium.view;
 import byui.cit260.DeliriumProject.model.Player;
 import byui.cit260.delirium.control.GameControl;
 
-import java.util.Scanner;
 
 /**
  *

@@ -8,8 +8,6 @@ package byui.cit260.delirium.view;
 import byui.cit260.delirium.control.ProgramControl;
 import delirium.Delirium;
 
-import java.util.Scanner;
-
 /**
  *
  * @author Joshua Brown
@@ -37,14 +35,16 @@ public class MainMenuView extends View {
         switch (inputs[0].toUpperCase()) {
             case "N":
                 ProgramControl.createNewGame(Delirium.getPlayer());
-                GameMenuView gameMenu = new GameMenuView();
+                GameMenuView gameMenuView = new GameMenuView();
+                gameMenuView.display();
                 return true;
             case "L":
                 LoadGameView loadGameView = new LoadGameView();
-                
+                loadGameView.display();
                 return true;
             case "H":
                 HelpView helpView = new HelpView();
+                helpView.display();
                 
                 return true;
                 

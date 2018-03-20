@@ -8,8 +8,6 @@ package byui.cit260.delirium.view;
 import byui.cit260.delirium.control.ProgramControl;
 import delirium.Delirium;
 
-import java.util.*;
-
 /**
  *
  * @author Christian

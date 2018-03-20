@@ -7,7 +7,6 @@ package byui.cit260.delirium.view;
 
 import byui.cit260.delirium.control.ProgramControl;
 import delirium.Delirium;
-import java.util.Scanner;
 
 /**
  *
@@ -34,11 +33,12 @@ public class GameMenuView extends View {
         switch (inputs[1].toUpperCase()) {
             case "I":
                 InventoryItemsView inventoryItemsView = new InventoryItemsView();
-                inventoryItemsView.displayInventoryItemsView();
+                inventoryItemsView.display();
                 return true;
                 
             case "H":
                 HelpView helpView = new HelpView();
+                helpView.display();
                 return true;
                 
             default:
