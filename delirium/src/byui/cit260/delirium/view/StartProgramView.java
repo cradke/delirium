@@ -14,54 +14,26 @@ import java.util.Scanner;
  *
  * @author Joshua Brown
  */
-public class StartProgramView {
+public class StartProgramView extends View {
 
     public StartProgramView() {
 
     }
+    @Override
+    public String[] getInputs() {
 
-    public void displayStartProgramView() {
-        boolean endView = false;
-        do {
-            String[] inputs = this.getInputs();
-            if (inputs[0].toUpperCase().equals("Q")) {
-                return;
-            }
-            endView = doAction(inputs);
-        } while (endView != true);
-    }
-
-    private String[] getInputs() {
-
-        Scanner inFile;
-        inFile = new Scanner(System.in);
         String[] inputs = new String[1];
         System.out.println("****************************************"
                          + "********* Welcome to Delirium **********"
                          + "****************************************");
-
-        boolean valid = false;
-
-        while (valid == false) {
-            System.out.println("Enter the player's name");
-            String input = inFile.nextLine();
-            String name = input.trim();
-
-            if (name.length() < 2) {
-                System.out.println("This is not a valid input");
-                valid = false;
-            } else {
-                inputs[0] = name;
-                valid = true;
-            }
-
-        }
-
+        String playerName = this.getInput("Enter the player's name");
+        inputs[0] = playerName;
         return inputs;
 
     }
 
-    private boolean doAction(String[] inputs) {
+    @Override
+    public boolean doAction(String[] inputs) {
         //playersName = get the first value in the inputs array
         String playersName = inputs[0];
         //player = savePlayer(playersName)
@@ -78,7 +50,6 @@ public class StartProgramView {
                              + " Swiggity Swooty, go get that booty"
                              + "****************************************");
         }
-
         //mainMenuView = Create a new MainMenuView object
         MainMenuView mainMenuView = new MainMenuView();
         mainMenuView.display();

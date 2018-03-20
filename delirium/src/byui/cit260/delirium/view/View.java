@@ -23,15 +23,41 @@ public abstract class View implements ViewInterface {
         boolean endView = false;
         do {
             String[] inputs = this.getInputs();
+            // if the value of the first item in the inputs array is "Q" then
+            if(inputs[0].toUpperCase().equals("Q")) {
+                // prompt for and get input
+                String answer = this.getInput("Are you sure you want to quit? Y for yes");
+                // if input value is yes 'y' then return 
+                if(answer.toUpperCase().substring(0,1).equals("Y")) {
+                    return;
+                }
+                
+            }
+                // end the view
             endView = doAction(inputs);
         } while (endView != true);
     }
 
     @Override
     public String getInput(String promptMessage) {
-        String[] inputs = new String[1];
+        
+        String input = null;
+        boolean valid = false;
         System.out.println(promptMessage);
-        inputs[0] = this.getInput();
-        return inputs;
+        while (valid == false) {
+            
+            input = inFile.nextLine();
+            input = input.trim();
+
+            if (input.length() < 1) {
+                System.out.println("Please enter in a correct value");
+                valid = false;
+            } else {
+                valid = true;
+               
+            }
+
+        }
+        return input;
     }
 }
