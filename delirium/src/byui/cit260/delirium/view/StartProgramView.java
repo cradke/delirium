@@ -36,9 +36,9 @@ public class StartProgramView {
         Scanner inFile;
         inFile = new Scanner(System.in);
         String[] inputs = new String[1];
-        System.out.println("**************************************** "
-                + "* Insert Incredibly Awesome Banner Here *"
-                + "*****************************************");
+        System.out.println("****************************************"
+                         + "********* Welcome to Delirium **********"
+                         + "****************************************");
 
         boolean valid = false;
 
@@ -74,14 +74,14 @@ public class StartProgramView {
             return false;
         } else {
             System.out.println("****************************************"
-                    + " Hi I'm Elmo. " + playersName
-                    + " is my best friend."
-                    + "****************************************");
+                             + " Hello" + playersName + ","
+                             + " Swiggity Swooty, go get that booty"
+                             + "****************************************");
         }
 
         //mainMenuView = Create a new MainMenuView object
         MainMenuView mainMenuView = new MainMenuView();
-        mainMenuView.displayMainMenuView();
+        mainMenuView.display();
         return true;
     }
 }

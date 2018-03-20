@@ -107,7 +107,7 @@ public class GameMenuView {
                     gameMenu.displayGameMenuView();
                     return false;
                 } else {
-                    System.out.println("Error! Enter in a correct value!");
+                    System.out.println("Error! Incorrect value!");
                     return false;
                 }
                 

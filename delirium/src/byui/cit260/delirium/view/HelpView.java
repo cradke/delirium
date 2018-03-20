@@ -73,7 +73,7 @@ public class HelpView {
             
             case "Q":
                 MainMenuView mainMenuView = new MainMenuView();
-                mainMenuView.displayMainMenuView();
+                mainMenuView.MainMenuView();
                 return true;
                 
             default:
