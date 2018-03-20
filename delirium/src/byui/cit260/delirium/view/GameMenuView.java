@@ -34,7 +34,7 @@ public class GameMenuView {
     }
 
     private String[] getInputs() {
-        String[] inputs = new String[1];
+        String[] inputs = new String[2];
         String name = null;
         boolean nameValid = false;
         while (nameValid == false) {
@@ -53,7 +53,7 @@ public class GameMenuView {
         }
         
         this.message = "Welcome to DELIRIUM - Choose your action "+name+"!"; 
-        inputs[0] = this.getInput();
+        inputs[1] = this.getInput();
         return inputs;
     }
 
@@ -77,7 +77,7 @@ public class GameMenuView {
     }
 
     private boolean doAction(String[] inputs) {
-        switch (inputs[0].toUpperCase()) {
+        switch (inputs[1].toUpperCase()) {
             case "I":
                 InventoryItemsView inventoryItemsView = new InventoryItemsView();
                 inventoryItemsView.displayInventoryItemsView();
