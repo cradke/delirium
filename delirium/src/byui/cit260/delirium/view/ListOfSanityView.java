@@ -9,22 +9,16 @@ package byui.cit260.delirium.view;
  *
  * @author carlr
  */
-public class ListOfSanityView {
-    ListOfSanityView() {
-       boolean endView = false;
-        do {
-            String[] inputs = this.getInputs();
-            if (inputs == null || inputs[0].toUpperCase().equals("Q")){
-                 return;
-            }
-            
-        endView = doAction(inputs);
-        } while (endView != true);
-}
+public class ListOfSanityView extends View {
 
-    private String[] getInputs() {
+    public ListOfSanityView() {
+    }
 
- /*inputs = new String array whose length = no. of inputs
+    @Override
+    public String[] getInputs() {
+        String[] inputs = new String[1];
+
+        /*inputs = new String array whose length = no. of inputs
  Display the instructions
 
 valid = false
@@ -43,10 +37,20 @@ ENDWHILE
 
 RETURN inputs
 }*/
+        return inputs;
     }
 
-    private boolean doAction(String[] inputs) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    @Override
+    public boolean doAction(String[] inputs) {
+        switch (inputs[0].toUpperCase()) {
+            case "A":
+
+                return true;
+
+            default:
+                System.out.println("Error invalid option!");
+        }
+        return false;
     }
-    
+
 }
