@@ -11,16 +11,23 @@ package byui.cit260.delirium.control;
  */
 public class NotepadControl {
     
+    String value = null;
+    boolean grab = false;
+    
     
     //Creat the notepad array with 99 indexi
     String[] notepad = new String[98];
         
     public String saveNote() {
-
+        
+        value = "input";
+        return value;
     }
     
     public boolean grabNote() {
         
+        grab = true;
+        return grab;
     }
             
     

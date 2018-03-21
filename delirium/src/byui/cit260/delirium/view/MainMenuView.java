@@ -8,59 +8,44 @@ package byui.cit260.delirium.view;
 import byui.cit260.delirium.control.ProgramControl;
 import delirium.Delirium;
 
-import java.util.Scanner;
-
 /**
  *
  * @author Joshua Brown
  */
 public class MainMenuView extends View {
-    private String main;
-    private String description;
-    private String promptMessage;
 
     public MainMenuView() {
     }
 
-    
-    private String getInput() {
-        Scanner inFile;
-        inFile = new Scanner(System.in);
-        boolean valid = false;
-        String input = null;
-        System.out.println(this.main);
-        System.out.println(this.description);
-        System.out.println(this.promptMessage);
-
-        while (valid == false) {
-            input = inFile.nextLine();
-            input = input.trim();
-            if (input.length() < 1) {
-                System.out.println("Please enter in a correct value");
-                valid = false;
-            } else {
-                valid = true;
-            }
-        }
-        return input;
+    @Override
+    public String[] getInputs() {
+        String[] inputs = new String[1];
+        System.out.println("Welcome to the Delirium Main Menu - Choose an Option"
+                + "\n n = new game"
+                + "\n l = load a game"
+                + "\n h = help menu"
+                + "\n q = quit");
+        inputs[0] = this.getInput("Enter in your selection");
+        
+        return inputs;
     }
 
-    private boolean doAction(String[] inputs) {
+    @Override
+    public boolean doAction(String[] inputs) {
         switch (inputs[0].toUpperCase()) {
             case "N":
                 ProgramControl.createNewGame(Delirium.getPlayer());
-                GameMenuView gameMenu = new GameMenuView();
-                gameMenu.displayGameMenuView();
+                GameMenuView gameMenuView = new GameMenuView();
+                gameMenuView.display();
                 return true;
             case "L":
                 LoadGameView loadGameView = new LoadGameView();
-                loadGameView.displayLoadGameView();
+                loadGameView.display();
                 return true;
             case "H":
                 HelpView helpView = new HelpView();
-                helpView.displayHelpView();
-                return true;
-            case "Q":
+                helpView.display();
+                
                 return true;
                 
             default:
@@ -69,8 +54,4 @@ public class MainMenuView extends View {
         return false;
     }
 
-    @Override
-    public String[] getInputs() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 }

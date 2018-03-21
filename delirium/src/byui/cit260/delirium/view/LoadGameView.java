@@ -9,10 +9,31 @@ package byui.cit260.delirium.view;
  *
  * @author Christian
  */
-class LoadGameView {
+public class LoadGameView extends View{
 
-    void displayLoadGameView() {
-        System.out.println("*** Display load game called ***");
+    public LoadGameView() {
+    }
+
+   @Override
+    public String[] getInputs() {
+        String[] inputs = new String[1];
+        System.out.println("Load Game State");
+        inputs[0] = this.getInput("Type in your saved game file");
+        
+        return inputs;
+    }
+
+    @Override
+    public boolean doAction(String[] inputs) {
+        switch (inputs[0].toUpperCase()) {
+            case "A":
+                
+                return true;
+                
+            default:
+                System.out.println("Error invalid option!");
+        }
+        return false;
     }
     
 }

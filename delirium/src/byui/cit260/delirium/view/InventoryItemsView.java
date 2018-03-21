@@ -5,22 +5,49 @@
  */
 package byui.cit260.delirium.view;
 
-import java.util.Scanner;
+import byui.cit260.delirium.control.ProgramControl;
+import delirium.Delirium;
+
 
 /**
  *
  * @author Christian
  */
-public class InventoryItemsView {
+public class InventoryItemsView extends View{
 
     public InventoryItemsView() {
-
     }
 
-    void displayInventoryItemsView() {
-         System.out.println("*** Inventory Items View called ***");
+   @Override
+    public String[] getInputs() {
+        String[] inputs = new String[1];
+        System.out.println("Inventory Menu - Choose an Option"
+                + "\n n = new game"
+                + "\n l = load a game"
+                + "\n h = help menu"
+                + "\n q = quit");
+        inputs[0] = this.getInput("Enter in your selection");
+        
+        return inputs;
     }
 
-   
+    @Override
+    public boolean doAction(String[] inputs) {
+        switch (inputs[0].toUpperCase()) {
+            case "A":
+                
+                return true;
+            case "B":
+                
+                return true;
+            case "C":
+                
+                return true;
+                
+            default:
+                System.out.println("Error invalid option!");
+        }
+        return false;
+    }
     
 }

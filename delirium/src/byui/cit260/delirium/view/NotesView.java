@@ -15,7 +15,7 @@ import java.util.Scanner;
  *
  * @author Joshua Brown
  */
-public class NotesView {
+public class NotesView extends View{
     
     private void displayNotesView() {
         boolean endView = false;
