@@ -8,6 +8,7 @@ package delirium;
 
 import byui.cit260.DeliriumProject.model.Game;
 import byui.cit260.DeliriumProject.model.Player;
+import byui.cit260.DeliriumProject.model.Actor;
 import byui.cit260.delirium.view.StartProgramView;
 
 /**
@@ -18,6 +19,7 @@ public class Delirium {
 
        private static Game currentGame = null;
        private static Player player = null;
+       private static Actor actor = null;
        
     public static void main(String[] args) {
         
@@ -40,5 +42,13 @@ public class Delirium {
     
     public static void setPlayer(Player player) {
         Delirium.player = player;
+    }
+    
+    public static Actor getActor() {
+        return actor;
+    }
+    
+    public static void setActor(Actor actor) {
+        Delirium.actor = actor;
     }
 }

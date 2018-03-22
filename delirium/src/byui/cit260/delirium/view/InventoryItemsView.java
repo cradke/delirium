@@ -22,10 +22,10 @@ public class InventoryItemsView extends View{
     public String[] getInputs() {
         String[] inputs = new String[1];
         System.out.println("Inventory Menu - Choose an Option"
-                + "\n n = new game"
-                + "\n l = load a game"
-                + "\n h = help menu"
-                + "\n q = quit");
+                + "\n item"
+                + "\n item"
+                + "\n b = exit inventory view and return to game"
+                + "\n q = quit the game");
         inputs[0] = this.getInput("Enter in your selection");
         
         return inputs;
@@ -38,8 +38,10 @@ public class InventoryItemsView extends View{
                 
                 return true;
             case "B":
+                    GameMenuView gameMenuView = new GameMenuView();
+                    gameMenuView.display();
+                    return true;
                 
-                return true;
             case "C":
                 
                 return true;

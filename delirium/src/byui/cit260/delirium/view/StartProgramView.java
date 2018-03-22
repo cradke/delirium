@@ -46,7 +46,7 @@ public class StartProgramView extends View {
         } else {
             System.out.println("****************************************"
                              + " Hello" + playersName + ","
-                             + " Swiggity Swooty, go get that booty"
+                             + " Welcome to Delirium. Good luck!"
                              + "****************************************");
         }
         //mainMenuView = Create a new MainMenuView object
