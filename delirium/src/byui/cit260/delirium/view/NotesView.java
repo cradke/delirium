@@ -9,7 +9,6 @@ import byui.cit260.DeliriumProject.model.Notepad;
 import byui.cit260.DeliriumProject.model.Player;
 import byui.cit260.delirium.control.GameControl;
 import byui.cit260.delirium.control.NotepadControl;
-import java.util.Scanner;
 
 /**
  *
@@ -17,25 +16,15 @@ import java.util.Scanner;
  */
 public class NotesView extends View{
     
-    private void displayNotesView() {
-        boolean endView = false;
-        do {
-            String[] inputs = this.getInputs();
-            if (inputs[0].toUpperCase().equals("")) {
-                return;
-            }
-            endview = doAction(inputs);
-        } while (endView != true);    
+    public NotesView() {
     }
     
-    
-    private String[] getInputs() {
-        Scanner inFile;
-        inFile = new Scanner(System.in);
+    @Override
+    public String[] getInputs() {
         String[] inputs = new String[1];
         System.out.println("You reach into your pocket to find a small pocketbook and pencil."
                          + "It's incredibly worn down, most likely from getting wet a time or two."
-                         + "There is also some gruesome stains on the back cover. Blood? You hope not.");
+                         + "There are also gruesome stains on the back cover. Blood? You hope not.");
 
         boolean valid = false;
 
@@ -57,8 +46,8 @@ public class NotesView extends View{
         return inputs;
         
     }
-    
-    private boolean doAction(String[] inputs) {
+    @Override
+    public boolean doAction(String[] inputs) {
          //noteNumber = get the first value in the inputs array
         String noteNumber = inputs[0];
         //player = savePlayer(playersName)
@@ -71,12 +60,10 @@ public class NotesView extends View{
             return false;
         } else {
             System.out.println("Here is your note");
+            return true;
             
         }
-
         //I need this program to be able to save Note strings inside of an array
         //
-    }
-        
     }
 }
