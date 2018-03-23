@@ -22,7 +22,8 @@ public class ActorControl {
             }
             else{
 
-            Actor prisoner = new Actor();
+            Actor prisoner;
+                prisoner = new Actor();
 
             prisoner.setName(actorName);
             Delirium.setActor(prisoner);
