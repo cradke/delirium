@@ -14,11 +14,19 @@ import java.io.Serializable;
 public class Game implements Serializable {
 
     public static Game getGame() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return null;
     }
     
     private long gameTime;
     private Player player;
+
+    public Game(Player player) {
+        
+    }
+
+    public Game(Player player, Actor prisoner) {
+        
+    }
 
     public Player getPlayer() {
         return player;

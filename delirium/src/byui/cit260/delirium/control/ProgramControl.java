@@ -7,21 +7,25 @@ package byui.cit260.delirium.control;
 
 import byui.cit260.DeliriumProject.model.Game;
 import byui.cit260.DeliriumProject.model.Player;
-
+import byui.cit260.DeliriumProject.model.Actor;
+import byui.cit260.DeliriumProject.model.Items;
 /**
  *
  * @author Christian
  */
 public class ProgramControl {
 
-    public static int createNewGame(Player player) {
+    public static int createNewGame(Player player, Actor prisoner, Items item) {
 
         if(player == null)
         {
             return -1;
         }
 
-        Game game = new Game();
+        Game game = new Game(player, prisoner);
+        
+                
+        
         
         
         
@@ -41,7 +45,5 @@ public class ProgramControl {
 //Assign the map to the game
 //RETURN 1 // indicates success
         return 1;
-}
     }
-    
 }
