@@ -5,6 +5,7 @@
  */
 package byui.cit260.delirium.control;
 
+import byui.cit260.DeliriumProject.model.Game;
 import byui.cit260.DeliriumProject.model.Player;
 
 /**
@@ -20,6 +21,10 @@ public class ProgramControl {
             return -1;
         }
 
+        Game game = new Game();
+        
+        
+        
         
 //game = create a new Game object
 //Save a reference to the Player object in the game
