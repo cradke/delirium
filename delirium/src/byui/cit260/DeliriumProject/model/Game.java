@@ -13,20 +13,17 @@ import java.io.Serializable;
  */
 public class Game implements Serializable {
 
-    public static Game getGame() {
-        return null;
-    }
     
     private long gameTime;
     private Player player;
 
-    public Game(Player player) {
-        
+    public Game() {
     }
 
-    public Game(Player player, Actor prisoner) {
-        
+    public Game(Player player) {
+        this.player = player;
     }
+    
 
     public Player getPlayer() {
         return player;

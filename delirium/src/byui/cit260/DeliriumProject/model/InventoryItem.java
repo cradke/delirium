@@ -12,13 +12,13 @@ import java.util.Objects;
  *
  * @author Joshua Brown
  */
-public class InventoryItems implements Serializable {
+public class InventoryItem implements Serializable {
     
     private double itemId;
     private long itemQuantity;
     private String description;
 
-    public InventoryItems() {
+    public InventoryItem() {
     }
 
     public double getItemId() {
@@ -65,7 +65,7 @@ public class InventoryItems implements Serializable {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final InventoryItems other = (InventoryItems) obj;
+        final InventoryItem other = (InventoryItem) obj;
         if (Double.doubleToLongBits(this.itemId) != Double.doubleToLongBits(other.itemId)) {
             return false;
         }
