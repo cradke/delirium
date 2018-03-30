@@ -35,8 +35,7 @@ public class ProgramControl {
         
         
 
-//Assign an actor to the player
-//items = createItems()
+
 //Save the list of items in the game
 //map = createMap(noOfRows, noOfColumns, items)
 //IF map == null THEN
@@ -48,6 +47,14 @@ public class ProgramControl {
     }
 
     private static InventoryItem[] createItems() {
-        System.out.println("createItems called")
+        System.out.println("createItems called");
+        
+        return InventoryItem[];
+    }
+    
+    public static Map createMap(int noOfRows, int noOfColumns){
+        
+        System.out.println("createMap called");
+        return Map;
     }
 }
