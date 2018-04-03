@@ -9,7 +9,7 @@ import byui.cit260.DeliriumProject.model.Game;
 import byui.cit260.DeliriumProject.model.Player;
 import byui.cit260.DeliriumProject.model.Actor;
 import byui.cit260.DeliriumProject.model.InventoryItem;
-import byui.cit260.DeliriumProject.model.Items;
+import byui.cit260.DeliriumProject.model.Map;
 import delirium.Delirium;
 /**
  *
@@ -29,31 +29,48 @@ public class ProgramControl {
         Delirium.setCurrentGame(game);
         player.setActor(Actor.Prisoner);
         InventoryItem[] items = ProgramControl.createItems();
+        Delirium.getCurrentGame().setItems(items);
         
+        Map map = new Map();
+        map = createMap(noOfRows, noOfColumns, items);
         
+        if(map == null){
+            return -1;
+        }
         
+        Delirium.getCurrentGame().setMap(map);
         
-        
-
-
-//Save the list of items in the game
-//map = createMap(noOfRows, noOfColumns, items)
-//IF map == null THEN
-// RETURN -1
-//ENDIF
-//Assign the map to the game
-//RETURN 1 // indicates success
         return 1;
     }
 
     private static InventoryItem[] createItems() {
         System.out.println("createItems called");
+        InventoryItem[] items = new InventoryItem[6];
         
-        return InventoryItem[];
+        
+        
+        
+        return items;
     }
-    
+            
     public static Map createMap(int noOfRows, int noOfColumns){
         
+     //   if noOfRows < 0 OR numOfColumns < 0
+// return null
+ //endif
+ //if items is null OR its length is < 1
+ //RETURN null
+ //endif
+//Map map = new Map object
+//save the noOfRows in the map
+//save the noOfColumns in the map
+//locations = createLocations(noOfRows, noOfColumns)
+//Assign the locations array to the map
+//scenes = createScenes()
+//questions = createQuestions()
+//assignQuestionsToScenes()
+//assignItemsToScenes()
+//assignScenesToLocations() 
         System.out.println("createMap called");
         return Map;
     }
