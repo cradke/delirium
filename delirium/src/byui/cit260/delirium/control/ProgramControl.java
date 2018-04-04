@@ -5,8 +5,12 @@
  */
 package byui.cit260.delirium.control;
 
+import byui.cit260.DeliriumProject.model.Game;
 import byui.cit260.DeliriumProject.model.Player;
-
+import byui.cit260.DeliriumProject.model.Actor;
+import byui.cit260.DeliriumProject.model.InventoryItem;
+import byui.cit260.DeliriumProject.model.Map;
+import delirium.Delirium;
 /**
  *
  * @author Christian
@@ -20,23 +24,54 @@ public class ProgramControl {
             return -1;
         }
 
+        Game game = new Game(player);
+        game.setPlayer(player);
+        Delirium.setCurrentGame(game);
+        player.setActor(Actor.Prisoner);
+        InventoryItem[] items = ProgramControl.createItems();
+        Delirium.getCurrentGame().setItems(items);
         
-//game = create a new Game object
-//Save a reference to the Player object in the game
-//Save a reference to the game in the main class
-//actors = createActors()
-//Save the list of actors in the Game object
-//Assign an actor to the player
-//items = createItems()
-//Save the list of items in the game
-//map = createMap(noOfRows, noOfColumns, items)
-//IF map == null THEN
-// RETURN -1
-//ENDIF
-//Assign the map to the game
-//RETURN 1 // indicates success
+        Map map = new Map();
+        map = createMap(noOfRows, noOfColumns, items);
+        
+        if(map == null){
+            return -1;
+        }
+        
+        Delirium.getCurrentGame().setMap(map);
+        
         return 1;
-}
     }
-    
+
+    private static InventoryItem[] createItems() {
+        System.out.println("createItems called");
+        InventoryItem[] items = new InventoryItem[6];
+        
+        
+        
+        
+        return items;
+    }
+            
+    public static Map createMap(int noOfRows, int noOfColumns){
+        
+     //   if noOfRows < 0 OR numOfColumns < 0
+// return null
+ //endif
+ //if items is null OR its length is < 1
+ //RETURN null
+ //endif
+//Map map = new Map object
+//save the noOfRows in the map
+//save the noOfColumns in the map
+//locations = createLocations(noOfRows, noOfColumns)
+//Assign the locations array to the map
+//scenes = createScenes()
+//questions = createQuestions()
+//assignQuestionsToScenes()
+//assignItemsToScenes()
+//assignScenesToLocations() 
+        System.out.println("createMap called");
+        return Map;
+    }
 }

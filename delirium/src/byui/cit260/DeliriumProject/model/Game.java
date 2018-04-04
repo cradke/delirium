@@ -12,12 +12,18 @@ import java.io.Serializable;
  * @author Joshua Brown
  */
 public class Game implements Serializable {
+
     
     private long gameTime;
     private Player player;
 
     public Game() {
     }
+
+    public Game(Player player) {
+        this.player = player;
+    }
+    
 
     public Player getPlayer() {
         return player;

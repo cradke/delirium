@@ -5,7 +5,6 @@
  */
 package delirium;
 
-
 import byui.cit260.DeliriumProject.model.Game;
 import byui.cit260.DeliriumProject.model.Player;
 import byui.cit260.DeliriumProject.model.Actor;
