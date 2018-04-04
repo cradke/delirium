@@ -5,14 +5,13 @@
  */
 package byui.cit260.DeliriumProject.model;
 
-import java.io.Serializable;
 import java.util.Objects;
 
 /**
  *
  * @author carlr
  */
-public class PuzzleScene implements Serializable{
+public class PuzzleScene extends DefaultScene{
     
     private double reward;
     private double failureConsequence;

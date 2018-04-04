@@ -15,26 +15,40 @@ import java.util.Objects;
  */
 public class Map implements Serializable {
     
-    private Point rowCount;
-    private Point columnCount;
+    private int rowCount;
+    private int columnCount;
     private String description;
+    private Location[][] locations;
 
     public Map() {
     }
 
-    public Point getRowCount() {
+    public Map(int rowCount, int columnCount) {
+        this.rowCount = rowCount;
+        this.columnCount = columnCount;
+    }
+
+    public Location[][] getLocations() {
+        return locations;
+    }
+
+    public void setLocations(Location[][] locations) {
+        this.locations = locations;
+    }
+
+    public int getRowCount() {
         return rowCount;
     }
 
-    public void setRowCount(Point rowCount) {
+    public void setRowCount(int rowCount) {
         this.rowCount = rowCount;
     }
 
-    public Point getColumnCount() {
+    public int getColumnCount() {
         return columnCount;
     }
 
-    public void setColumnCount(Point columnCount) {
+    public void setColumnCount(int columnCount) {
         this.columnCount = columnCount;
     }
 

@@ -5,14 +5,14 @@
  */
 package byui.cit260.DeliriumProject.model;
 
-import java.io.Serializable;
+
 import java.util.Objects;
 
 /**
  *
  * @author carlr
  */
-public class EndScene implements Serializable{
+public class EndScene extends DefaultScene{
     
     private double insanityLevel;
     private String description;

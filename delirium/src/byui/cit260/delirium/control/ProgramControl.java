@@ -25,14 +25,18 @@ public class ProgramControl {
         }
 
         Game game = new Game(player);
+        
         game.setPlayer(player);
+        
         Delirium.setCurrentGame(game);
+        
         player.setActor(Actor.Prisoner);
+        
         InventoryItem[] items = ProgramControl.createItems();
+        
         Delirium.getCurrentGame().setItems(items);
         
-        Map map = new Map();
-        map = createMap(noOfRows, noOfColumns, items);
+        Map map = createMap(6, 6, items);
         
         if(map == null){
             return -1;
@@ -47,28 +51,26 @@ public class ProgramControl {
         System.out.println("createItems called");
         InventoryItem[] items = new InventoryItem[6];
         
-        
-        
-        
         return items;
     }
             
-    public static Map createMap(int noOfRows, int noOfColumns,
-            InventoryItem[] items){
+    public static Map createMap(int noOfRows, int noOfColumns, InventoryItem[] items) {
         
         if(noOfRows < 0 || noOfColumns < 0){
             return null;
         }
-        
         if(items == null || items.length < 1){
             return null;
         }
-     //   if noOfRows < 0 OR numOfColumns < 0
-// return null
- //endif
- //if items is null OR its length is < 1
- //RETURN null
- //endif
+        
+        Map map = new Map(noOfRows, noOfColumns);
+        
+        
+        
+        
+        
+        
+   
 //Map map = new Map object
 //save the noOfRows in the map
 //save the noOfColumns in the map
@@ -80,6 +82,6 @@ public class ProgramControl {
 //assignItemsToScenes()
 //assignScenesToLocations() 
         System.out.println("createMap called");
-        return Map;
+        return null;
     }
 }

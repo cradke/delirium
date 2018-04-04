@@ -5,14 +5,13 @@
  */
 package byui.cit260.DeliriumProject.model;
 
-import java.io.Serializable;
 import java.util.Objects;
 
 /**
  *
  * @author carlr
  */
-public class ChallengeScene implements Serializable{
+public class ChallengeScene extends DefaultScene{
     
     private String description;
     private double timeLimit;
