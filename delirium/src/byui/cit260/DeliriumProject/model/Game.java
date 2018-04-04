@@ -16,6 +16,8 @@ public class Game implements Serializable {
     
     private long gameTime;
     private Player player;
+    private InventoryItem[] items;
+    private Map map;
 
     public Game() {
     }
@@ -40,6 +42,24 @@ public class Game implements Serializable {
     public void setGameTime(long gameTime) {
         this.gameTime = gameTime;
     }
+
+    public InventoryItem[] getItems() {
+        return items;
+    }
+
+    public void setItems(InventoryItem[] items) {
+        this.items = items;
+    }
+
+    public Map getMap() {
+        return map;
+    }
+
+    public void setMap(Map map) {
+        this.map = map;
+    }
+    
+    
     
     @Override
     public String toString() {

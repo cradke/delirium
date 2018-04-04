@@ -53,8 +53,16 @@ public class ProgramControl {
         return items;
     }
             
-    public static Map createMap(int noOfRows, int noOfColumns){
+    public static Map createMap(int noOfRows, int noOfColumns,
+            InventoryItem[] items){
         
+        if(noOfRows < 0 || noOfColumns < 0){
+            return null;
+        }
+        
+        if(items == null || items.length < 1){
+            return null;
+        }
      //   if noOfRows < 0 OR numOfColumns < 0
 // return null
  //endif
