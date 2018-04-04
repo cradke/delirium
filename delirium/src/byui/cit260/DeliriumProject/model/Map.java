@@ -5,7 +5,6 @@
  */
 package byui.cit260.DeliriumProject.model;
 
-import java.awt.Point;
 import java.io.Serializable;
 import java.util.Objects;
 
