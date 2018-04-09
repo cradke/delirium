@@ -8,7 +8,9 @@ package byui.cit260.delirium.control;
 import byui.cit260.DeliriumProject.model.Game;
 import byui.cit260.DeliriumProject.model.Player;
 import byui.cit260.DeliriumProject.model.Actor;
+import byui.cit260.DeliriumProject.model.DefaultScene;
 import byui.cit260.DeliriumProject.model.InventoryItem;
+import byui.cit260.DeliriumProject.model.Location;
 import byui.cit260.DeliriumProject.model.Map;
 import delirium.Delirium;
 /**
@@ -51,6 +53,7 @@ public class ProgramControl {
         System.out.println("createItems called");
         InventoryItem[] items = new InventoryItem[6];
         
+        
         return items;
     }
             
@@ -65,8 +68,15 @@ public class ProgramControl {
         
         Map map = new Map(noOfRows, noOfColumns);
         
+        Location[][] locations = ProgramControl.createLocations(noOfRows, noOfColumns);
         
+        map.setLocations(locations);
         
+        DefaultScene[] scenes = ProgramControl.createScenes();
+        
+        ProgramControl.ItemsToScenes(items, scenes);
+        
+        ProgramControl.ScenesToLocations(scenes, locations[noOfRows][noOfColumns]);
         
         
         
@@ -83,5 +93,25 @@ public class ProgramControl {
 //assignScenesToLocations() 
         System.out.println("createMap called");
         return null;
+    }
+
+    private static Location[][] createLocations(int noOfRows, int noOfColumns) {
+        System.out.println("Create locations called");
+        
+        
+        return null;
+    }
+
+    private static DefaultScene[] createScenes() {
+        System.out.println("Create scenes called");
+        return null;
+    }
+
+    private static void ItemsToScenes(InventoryItem[] items, DefaultScene[] scenes) {
+        System.out.println("Assign items to scenes called");
+    }
+
+    private static void ScenesToLocations(DefaultScene[] scenes, Location location) {
+        System.out.println("Assigns scenes to locations called");
     }
 }
