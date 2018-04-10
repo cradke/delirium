@@ -72,11 +72,11 @@ public class ProgramControl {
         
         map.setLocations(locations);
         
-        DefaultScene[] scenes = ProgramControl.createScenes();
+       // DefaultScene[] scenes = ProgramControl.createScenes();
         
-        ProgramControl.ItemsToScenes(items, scenes);
+       // ProgramControl.ItemsToScenes(items, scenes);
         
-        ProgramControl.ScenesToLocations(scenes, locations[noOfRows][noOfColumns]);
+        ScenesToLocations(locations);
         
         
         
@@ -97,21 +97,67 @@ public class ProgramControl {
 
     private static Location[][] createLocations(int noOfRows, int noOfColumns) {
         System.out.println("Create locations called");
+        if(noOfRows < 0 || noOfColumns < 0){
+            return null;
+        }
+        Location[][] locations = new Location[noOfRows][noOfColumns];
+        for(int i = 0; i < noOfRows; i++) {
+            for(int j = 0; j < noOfColumns; j++){
+                locations[i][j] = new Location(); 
+                locations[i][j].setVisited(false);
+            }
+    }
         
+        return locations;
+    }
+
+    // private static DefaultScene[] createScenes() {
+    //     System.out.println("Create scenes called");
+    //  DefaultScene[] scenes = new DefaultScene[2];
         
-        return null;
-    }
+    //    return scenes;
+    // }
 
-    private static DefaultScene[] createScenes() {
-        System.out.println("Create scenes called");
-        return null;
-    }
+    // private static void ItemsToScenes(InventoryItem[] items, DefaultScene[] scenes) {
+    //     System.out.println("Assign items to scenes called");
+    // }
 
-    private static void ItemsToScenes(InventoryItem[] items, DefaultScene[] scenes) {
-        System.out.println("Assign items to scenes called");
-    }
-
-    private static void ScenesToLocations(DefaultScene[] scenes, Location location) {
+    private static void ScenesToLocations( Location[][] locations) {
         System.out.println("Assigns scenes to locations called");
+        locations[0][0].setScene(new DefaultScene()) ;
+        locations[0][1].setScene(new DefaultScene());
+        locations[0][2].setScene(new DefaultScene());
+        locations[0][3].setScene(new DefaultScene());
+        locations[0][4].setScene(new DefaultScene());
+        locations[0][5].setScene(new DefaultScene());
+        
+        locations[1][0].setScene(new DefaultScene());
+        locations[1][1].setScene(new DefaultScene());
+        locations[1][2].setScene(new DefaultScene());
+        locations[1][3].setScene(new DefaultScene());
+        locations[1][4].setScene(new DefaultScene());
+        locations[1][5].setScene(new DefaultScene());
+        
+        locations[1][0].setScene(new DefaultScene());
+        locations[1][1].setScene(new DefaultScene());
+        locations[1][2].setScene(new DefaultScene());
+        locations[1][3].setScene(new DefaultScene());
+        locations[1][4].setScene(new DefaultScene());
+        locations[1][5].setScene(new DefaultScene());
+        
+        locations[1][0].setScene(new DefaultScene());
+        locations[1][1].setScene(new DefaultScene());
+        locations[1][2].setScene(new DefaultScene());
+        locations[1][3].setScene(new DefaultScene());
+        locations[1][4].setScene(new DefaultScene());
+        locations[1][5].setScene(new DefaultScene());
+        
+        locations[1][0].setScene(new DefaultScene());
+        locations[1][1].setScene(new DefaultScene());
+        locations[1][2].setScene(new DefaultScene());
+        locations[1][3].setScene(new DefaultScene());
+        locations[1][4].setScene(new DefaultScene());
+        locations[1][5].setScene(new DefaultScene());
+        
     }
 }

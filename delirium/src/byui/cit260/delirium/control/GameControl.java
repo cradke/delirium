@@ -5,6 +5,9 @@
  */
 package byui.cit260.delirium.control;
 
+import byui.cit260.DeliriumProject.model.Game;
+import byui.cit260.DeliriumProject.model.Location;
+import byui.cit260.DeliriumProject.model.Map;
 import byui.cit260.DeliriumProject.model.Player;
 import delirium.Delirium;
 
@@ -28,6 +31,26 @@ public class GameControl {
 
             return player;
             }
+    }
+    
+    public static void displayMap(Player player, Map map) {
+        Delirium delirium = new Delirium();
+        Game game = delirium.getCurrentGame();
+        Location[][] locations = game.getMap().getLocations();
+        System.out.println("DELIRIUM MAP");
+        System.out.println("1 2 3 4 5 6");
+        
+        for(int i = 0; i < locations[0].length; i++) {
+            System.out.println("------------");
+            System.out.println(i);
+            for(int j = 0; j < locations[i].length; j++) {
+                System.out.println("|");
+                Location l = locations[i][j];
+                if(l.isVisited()) {
+                    
+                }
+            }
+        }
     }
     
     
