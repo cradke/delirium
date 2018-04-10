@@ -145,31 +145,31 @@ public class ProgramControl {
         locations[0][5].setScene(scenes[SceneType.WallScene.ordinal()]);
         
         locations[1][0].setScene(scenes[SceneType.WallScene.ordinal()]);
-        locations[1][1].setScene(new DefaultScene());
-        locations[1][2].setScene(new StartScene());
+        locations[1][1].setScene(scenes[SceneType.EmptyScene.ordinal()]);
+        locations[1][2].setScene(scenes[SceneType.StartScene.ordinal()]);
         locations[1][3].setScene(scenes[SceneType.WallScene.ordinal()]);
-        locations[1][4].setScene(new EndScene());
+        locations[1][4].setScene(scenes[SceneType.EndScene.ordinal()]);
         locations[1][5].setScene(scenes[SceneType.WallScene.ordinal()]);
         
         locations[2][0].setScene(scenes[SceneType.WallScene.ordinal()]);
-        locations[2][1].setScene(new PuzzleScene());
+        locations[2][1].setScene(scenes[SceneType.PuzzleScene.ordinal()]);
         locations[2][2].setScene(scenes[SceneType.WallScene.ordinal()]);
         locations[2][3].setScene(scenes[SceneType.WallScene.ordinal()]);
-        locations[2][4].setScene(new DefaultScene());
+        locations[2][4].setScene(scenes[SceneType.EmptyScene.ordinal()]);
         locations[2][5].setScene(scenes[SceneType.WallScene.ordinal()]);
         
         locations[3][0].setScene(scenes[SceneType.WallScene.ordinal()]);
-        locations[3][1].setScene(new DefaultScene());
+        locations[3][1].setScene(scenes[SceneType.EmptyScene.ordinal()]);
         locations[3][2].setScene(scenes[SceneType.WallScene.ordinal()]);
         locations[3][3].setScene(scenes[SceneType.WallScene.ordinal()]);
-        locations[3][4].setScene(new ChallengeScene());
+        locations[3][4].setScene(scenes[SceneType.ChallengeScene.ordinal()]);
         locations[3][5].setScene(scenes[SceneType.WallScene.ordinal()]);
         
         locations[4][0].setScene(scenes[SceneType.WallScene.ordinal()]);
-        locations[4][1].setScene(new PuzzleScene());
-        locations[4][2].setScene(new DefaultScene());
-        locations[4][3].setScene(new PuzzleScene());
-        locations[4][4].setScene(new DefaultScene());
+        locations[4][1].setScene(scenes[SceneType.PuzzleScene.ordinal()]);
+        locations[4][2].setScene(scenes[SceneType.EmptyScene.ordinal()]);
+        locations[4][3].setScene(scenes[SceneType.PuzzleScene.ordinal()]);
+        locations[4][4].setScene(scenes[SceneType.EmptyScene.ordinal()]);
         locations[4][5].setScene(scenes[SceneType.WallScene.ordinal()]);
         
         locations[5][0].setScene(scenes[SceneType.WallScene.ordinal()]);
