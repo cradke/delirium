@@ -21,6 +21,10 @@ public class DefaultScene implements Serializable {
     public DefaultScene() {
     }
 
+    public DefaultScene(String description) {
+        this.description = description;
+    }
+
     public String getDescription() {
         return description;
     }

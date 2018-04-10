@@ -15,6 +15,7 @@ import byui.cit260.DeliriumProject.model.InventoryItem;
 import byui.cit260.DeliriumProject.model.Location;
 import byui.cit260.DeliriumProject.model.Map;
 import byui.cit260.DeliriumProject.model.PuzzleScene;
+import byui.cit260.DeliriumProject.model.SceneType;
 import byui.cit260.DeliriumProject.model.StartScene;
 import byui.cit260.DeliriumProject.model.WallScene;
 import delirium.Delirium;
@@ -42,8 +43,8 @@ public class ProgramControl {
         InventoryItem[] items = ProgramControl.createItems();
         
         Delirium.getCurrentGame().setItems(items);
-        
-        Map map = createMap(6, 6, items);
+        DefaultScene[] scenes = createScenes();
+        Map map = createMap(6, 6, items, scenes);
         
         if(map == null){
             return -1;
@@ -62,7 +63,7 @@ public class ProgramControl {
         return items;
     }
             
-    public static Map createMap(int noOfRows, int noOfColumns, InventoryItem[] items) {
+    public static Map createMap(int noOfRows, int noOfColumns, InventoryItem[] items, DefaultScene[] scenes) {
         
         if(noOfRows < 0 || noOfColumns < 0){
             return null;
@@ -81,7 +82,7 @@ public class ProgramControl {
         
        // ProgramControl.ItemsToScenes(items, scenes);
         
-        ScenesToLocations(locations);
+        ScenesToLocations(locations, scenes);
         
         
         
@@ -119,7 +120,13 @@ public class ProgramControl {
     private static DefaultScene[] createScenes() {
         System.out.println("Create scenes called");
         DefaultScene[] scenes = new DefaultScene[6];
-      
+        scenes[SceneType.EmptyScene.ordinal()] = new DefaultScene("There is nothing here but empty space.");
+        scenes[SceneType.WallScene.ordinal()] = new DefaultScene("You see a wall.");
+        scenes[SceneType.PuzzleScene.ordinal()] = new DefaultScene("There is a puzzle in here.");
+        scenes[SceneType.ChallengeScene.ordinal()] = new DefaultScene("There is a challenge in here.");
+        scenes[SceneType.StartScene.ordinal()] = new DefaultScene("This looks like the beginning.");
+        scenes[SceneType.EndScene.ordinal()] = new DefaultScene("This is the end!");
+        
         
         return scenes;
     }
@@ -128,49 +135,49 @@ public class ProgramControl {
     //     System.out.println("Assign items to scenes called");
     // }
 
-    private static void ScenesToLocations( Location[][] locations) {
+    private static void ScenesToLocations( Location[][] locations, DefaultScene[] scenes) {
         System.out.println("Assigns scenes to locations called");
-        locations[0][0].setScene(new WallScene());
-        locations[0][1].setScene(new WallScene());
-        locations[0][2].setScene(new WallScene());
-        locations[0][3].setScene(new WallScene());
-        locations[0][4].setScene(new WallScene());
-        locations[0][5].setScene(new WallScene());
+        locations[0][0].setScene(scenes[SceneType.WallScene.ordinal()]);
+        locations[0][1].setScene(scenes[SceneType.WallScene.ordinal()]);
+        locations[0][2].setScene(scenes[SceneType.WallScene.ordinal()]);
+        locations[0][3].setScene(scenes[SceneType.WallScene.ordinal()]);
+        locations[0][4].setScene(scenes[SceneType.WallScene.ordinal()]);
+        locations[0][5].setScene(scenes[SceneType.WallScene.ordinal()]);
         
-        locations[1][0].setScene(new WallScene());
+        locations[1][0].setScene(scenes[SceneType.WallScene.ordinal()]);
         locations[1][1].setScene(new DefaultScene());
         locations[1][2].setScene(new StartScene());
-        locations[1][3].setScene(new WallScene());
+        locations[1][3].setScene(scenes[SceneType.WallScene.ordinal()]);
         locations[1][4].setScene(new EndScene());
-        locations[1][5].setScene(new WallScene());
+        locations[1][5].setScene(scenes[SceneType.WallScene.ordinal()]);
         
-        locations[2][0].setScene(new WallScene());
+        locations[2][0].setScene(scenes[SceneType.WallScene.ordinal()]);
         locations[2][1].setScene(new PuzzleScene());
-        locations[2][2].setScene(new WallScene());
-        locations[2][3].setScene(new WallScene());
+        locations[2][2].setScene(scenes[SceneType.WallScene.ordinal()]);
+        locations[2][3].setScene(scenes[SceneType.WallScene.ordinal()]);
         locations[2][4].setScene(new DefaultScene());
-        locations[2][5].setScene(new WallScene());
+        locations[2][5].setScene(scenes[SceneType.WallScene.ordinal()]);
         
-        locations[3][0].setScene(new WallScene());
+        locations[3][0].setScene(scenes[SceneType.WallScene.ordinal()]);
         locations[3][1].setScene(new DefaultScene());
-        locations[3][2].setScene(new WallScene());
-        locations[3][3].setScene(new WallScene());
+        locations[3][2].setScene(scenes[SceneType.WallScene.ordinal()]);
+        locations[3][3].setScene(scenes[SceneType.WallScene.ordinal()]);
         locations[3][4].setScene(new ChallengeScene());
-        locations[3][5].setScene(new WallScene());
+        locations[3][5].setScene(scenes[SceneType.WallScene.ordinal()]);
         
-        locations[4][0].setScene(new WallScene());
+        locations[4][0].setScene(scenes[SceneType.WallScene.ordinal()]);
         locations[4][1].setScene(new PuzzleScene());
         locations[4][2].setScene(new DefaultScene());
         locations[4][3].setScene(new PuzzleScene());
         locations[4][4].setScene(new DefaultScene());
-        locations[4][5].setScene(new WallScene());
+        locations[4][5].setScene(scenes[SceneType.WallScene.ordinal()]);
         
-        locations[5][0].setScene(new WallScene());
-        locations[5][1].setScene(new WallScene());
-        locations[5][2].setScene(new WallScene());
-        locations[5][3].setScene(new WallScene());
-        locations[5][4].setScene(new WallScene());
-        locations[5][5].setScene(new WallScene());
+        locations[5][0].setScene(scenes[SceneType.WallScene.ordinal()]);
+        locations[5][1].setScene(scenes[SceneType.WallScene.ordinal()]);
+        locations[5][2].setScene(scenes[SceneType.WallScene.ordinal()]);
+        locations[5][3].setScene(scenes[SceneType.WallScene.ordinal()]);
+        locations[5][4].setScene(scenes[SceneType.WallScene.ordinal()]);
+        locations[5][5].setScene(scenes[SceneType.WallScene.ordinal()]);
         
     }
 }
