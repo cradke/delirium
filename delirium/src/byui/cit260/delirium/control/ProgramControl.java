@@ -10,9 +10,13 @@ import byui.cit260.DeliriumProject.model.Player;
 import byui.cit260.DeliriumProject.model.Actor;
 import byui.cit260.DeliriumProject.model.ChallengeScene;
 import byui.cit260.DeliriumProject.model.DefaultScene;
+import byui.cit260.DeliriumProject.model.EndScene;
 import byui.cit260.DeliriumProject.model.InventoryItem;
 import byui.cit260.DeliriumProject.model.Location;
 import byui.cit260.DeliriumProject.model.Map;
+import byui.cit260.DeliriumProject.model.PuzzleScene;
+import byui.cit260.DeliriumProject.model.StartScene;
+import byui.cit260.DeliriumProject.model.WallScene;
 import delirium.Delirium;
 /**
  *
@@ -112,12 +116,13 @@ public class ProgramControl {
         return locations;
     }
 
-    // private static DefaultScene[] createScenes() {
-    //     System.out.println("Create scenes called");
-    //  DefaultScene[] scenes = new DefaultScene[2];
+    private static DefaultScene[] createScenes() {
+        System.out.println("Create scenes called");
+        DefaultScene[] scenes = new DefaultScene[6];
+      
         
-    //    return scenes;
-    // }
+        return scenes;
+    }
 
     // private static void ItemsToScenes(InventoryItem[] items, DefaultScene[] scenes) {
     //     System.out.println("Assign items to scenes called");

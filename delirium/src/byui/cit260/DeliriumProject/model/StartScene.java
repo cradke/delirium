@@ -12,7 +12,8 @@ import java.util.Objects;
  *
  * @author carlr
  */
-public class StartScene implements Serializable{
+public class StartScene extends DefaultScene{
+    
     private String description;
     
     public StartScene() {
