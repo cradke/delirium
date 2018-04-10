@@ -8,6 +8,7 @@ package byui.cit260.delirium.control;
 import byui.cit260.DeliriumProject.model.Game;
 import byui.cit260.DeliriumProject.model.Player;
 import byui.cit260.DeliriumProject.model.Actor;
+import byui.cit260.DeliriumProject.model.ChallengeScene;
 import byui.cit260.DeliriumProject.model.DefaultScene;
 import byui.cit260.DeliriumProject.model.InventoryItem;
 import byui.cit260.DeliriumProject.model.Location;
@@ -124,40 +125,47 @@ public class ProgramControl {
 
     private static void ScenesToLocations( Location[][] locations) {
         System.out.println("Assigns scenes to locations called");
-        locations[0][0].setScene(new DefaultScene()) ;
-        locations[0][1].setScene(new DefaultScene());
-        locations[0][2].setScene(new DefaultScene());
-        locations[0][3].setScene(new DefaultScene());
-        locations[0][4].setScene(new DefaultScene());
-        locations[0][5].setScene(new DefaultScene());
+        locations[0][0].setScene(new WallScene());
+        locations[0][1].setScene(new WallScene());
+        locations[0][2].setScene(new WallScene());
+        locations[0][3].setScene(new WallScene());
+        locations[0][4].setScene(new WallScene());
+        locations[0][5].setScene(new WallScene());
         
-        locations[1][0].setScene(new DefaultScene());
+        locations[1][0].setScene(new WallScene());
         locations[1][1].setScene(new DefaultScene());
-        locations[1][2].setScene(new DefaultScene());
-        locations[1][3].setScene(new DefaultScene());
-        locations[1][4].setScene(new DefaultScene());
-        locations[1][5].setScene(new DefaultScene());
+        locations[1][2].setScene(new StartScene());
+        locations[1][3].setScene(new WallScene());
+        locations[1][4].setScene(new EndScene());
+        locations[1][5].setScene(new WallScene());
         
-        locations[1][0].setScene(new DefaultScene());
-        locations[1][1].setScene(new DefaultScene());
-        locations[1][2].setScene(new DefaultScene());
-        locations[1][3].setScene(new DefaultScene());
-        locations[1][4].setScene(new DefaultScene());
-        locations[1][5].setScene(new DefaultScene());
+        locations[2][0].setScene(new WallScene());
+        locations[2][1].setScene(new PuzzleScene());
+        locations[2][2].setScene(new WallScene());
+        locations[2][3].setScene(new WallScene());
+        locations[2][4].setScene(new DefaultScene());
+        locations[2][5].setScene(new WallScene());
         
-        locations[1][0].setScene(new DefaultScene());
-        locations[1][1].setScene(new DefaultScene());
-        locations[1][2].setScene(new DefaultScene());
-        locations[1][3].setScene(new DefaultScene());
-        locations[1][4].setScene(new DefaultScene());
-        locations[1][5].setScene(new DefaultScene());
+        locations[3][0].setScene(new WallScene());
+        locations[3][1].setScene(new DefaultScene());
+        locations[3][2].setScene(new WallScene());
+        locations[3][3].setScene(new WallScene());
+        locations[3][4].setScene(new ChallengeScene());
+        locations[3][5].setScene(new WallScene());
         
-        locations[1][0].setScene(new DefaultScene());
-        locations[1][1].setScene(new DefaultScene());
-        locations[1][2].setScene(new DefaultScene());
-        locations[1][3].setScene(new DefaultScene());
-        locations[1][4].setScene(new DefaultScene());
-        locations[1][5].setScene(new DefaultScene());
+        locations[4][0].setScene(new WallScene());
+        locations[4][1].setScene(new PuzzleScene());
+        locations[4][2].setScene(new DefaultScene());
+        locations[4][3].setScene(new PuzzleScene());
+        locations[4][4].setScene(new DefaultScene());
+        locations[4][5].setScene(new WallScene());
+        
+        locations[5][0].setScene(new WallScene());
+        locations[5][1].setScene(new WallScene());
+        locations[5][2].setScene(new WallScene());
+        locations[5][3].setScene(new WallScene());
+        locations[5][4].setScene(new WallScene());
+        locations[5][5].setScene(new WallScene());
         
     }
 }
