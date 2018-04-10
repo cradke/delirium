@@ -12,11 +12,12 @@ import java.util.Objects;
  *
  * @author carlr
  */
-public class WallScene implements Serializable{
+public class WallScene extends DefaultScene{
+    
     private String description;
     
     public WallScene() {
-}
+    }
 
     public String getDescription() {
         return description;

@@ -5,6 +5,8 @@
  */
 package byui.cit260.delirium.view;
 
+import byui.cit260.DeliriumProject.model.Location;
+import byui.cit260.DeliriumProject.model.Map;
 import byui.cit260.delirium.control.ProgramControl;
 import delirium.Delirium;
 
@@ -36,6 +38,9 @@ public class GameMenuView extends View {
     @Override
     public boolean doAction(String[] inputs) {
         switch (inputs[1].toUpperCase()) {
+            case "M":
+                this.displayMap();
+                return true;
             case "I":
                 InventoryItemsView inventoryItemsView = new InventoryItemsView();
                 inventoryItemsView.display();
@@ -64,6 +69,13 @@ public class GameMenuView extends View {
         }
         return false;
     }
-    
-    
+
+    private void displayMap() {
+        System.out.println("*** DISPLAY MAP CALLED ***");
+        Delirium.getCurrentGame();
+        
+        System.out.println("DELIRIUM MAP");
+        System.out.println("0 1 2 3 4 5");
+        
+    }
 }
